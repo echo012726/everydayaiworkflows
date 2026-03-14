@@ -1,5 +1,7 @@
 "use client";
 
+import CommentSection from '../components/CommentSection';
+
 const postsData: Record<string, { title: string; category: string; date: string; readingTime: string; sections: string[] }> = {
   '10-chatgpt-prompts-sales': { title: '10 ChatGPT Prompts for Sales Professionals', category: 'AI Prompts', date: '2026-03-15', readingTime: '5 min', sections: ['Introduction', 'The Prompts', 'Conclusion'] },
   'save-10-hours-week-ai': { title: 'How I Save 10 Hours Per Week with AI', category: 'Productivity', date: '2026-03-11', readingTime: '6 min', sections: ['My Routine', 'The Results'] },
@@ -60,6 +62,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             <button style={{ padding: '0.75rem 1.5rem', background: '#7c3aed', border: 'none', borderRadius: '8px', color: '#fff', fontWeight: '600', cursor: 'pointer' }}>Subscribe</button>
           </div>
         </div>
+
+        <CommentSection />
       </div>
     </div>
   );

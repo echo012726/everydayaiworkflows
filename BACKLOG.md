@@ -9,7 +9,7 @@
 - [x] Add author bio boxes
 - [x] Add post categories/tags
 - [x] Add newsletter signup between posts
-- [ ] Add comment section
+- [x] Add comment section
 - [x] Add search functionality
 - [x] Add print-friendly view
 - [ ] Add PDF download option
