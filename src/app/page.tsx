@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const prompts = [
   "Analyze this data and identify the top 3 trends. Explain each trend in one sentence.",
@@ -68,16 +68,13 @@ export default function Home() {
 
   return (
     <div style={{ minHeight: '100vh', background: darkMode ? 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%)' : '#f8f9fa', color: darkMode ? '#fff' : '#1a1a3e', fontFamily: 'system-ui, -apple-system, sans-serif', transition: 'background 0.3s, color 0.3s' }}>
-      {/* Reading Progress Bar */}
-      <div style={{ position: 'fixed', top: 0, left: 0, height: '3px', background: 'linear-gradient(90deg, #00d4ff, #7c3aed)', width: readingProgress + '%', zIndex: 1000, transition: 'width 0.1s' }} />
+      <div style={{ position: 'fixed', top: 0, left: 0, height: '3px', background: 'linear-gradient(90deg, #00d4ff, #7c3aed)', width: readingProgress + '%', zIndex: 1000 }} />
       
-      {/* Dark Mode Toggle */}
       <button onClick={() => setDarkMode(!darkMode)} style={{ position: 'fixed', top: '1rem', right: '1rem', padding: '0.5rem 1rem', background: darkMode ? 'rgba(255,255,255,0.1)' : '#e5e7eb', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1.2rem', zIndex: 100 }}>
         {darkMode ? '☀️' : '🌙'}
       </button>
 
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
-        {/* Header */}
         <header style={{ textAlign: "center", marginBottom: "3rem", paddingTop: "2rem" }}>
           <h1 style={{ fontSize: "2.5rem", fontWeight: "700", background: "linear-gradient(90deg, #00d4ff, #7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", marginBottom: "0.5rem" }}>
             Everyday AI Workflows
@@ -87,16 +84,7 @@ export default function Home() {
           </p>
         </header>
 
-        {/* Prompt Card */}
-        <div style={{
-          background: darkMode ? "rgba(255, 255, 255, 0.05)" : "#fff",
-          borderRadius: "20px",
-          padding: "2.5rem",
-          border: darkMode ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid #e5e7eb",
-          backdropFilter: "blur(10px)",
-          marginBottom: "2rem",
-          boxShadow: darkMode ? "none" : "0 4px 6px rgba(0,0,0,0.1)"
-        }}>
+        <div style={{ background: darkMode ? "rgba(255, 255, 255, 0.05)" : "#fff", borderRadius: "20px", padding: "2.5rem", border: darkMode ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid #e5e7eb", marginBottom: "2rem" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
             <span style={{ background: "linear-gradient(90deg, #00d4ff, #7c3aed)", padding: "0.4rem 1rem", borderRadius: "20px", fontSize: "0.85rem", fontWeight: "600", color: "#fff" }}>
               Prompt of the Day
@@ -111,32 +99,17 @@ export default function Home() {
           </p>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <button onClick={copyToClipboard} style={{
-              background: copied ? "#10b981" : "linear-gradient(90deg, #00d4ff, #7c3aed)",
-              border: "none", padding: "0.8rem 1.5rem", borderRadius: "10px", color: "#fff", fontWeight: "600", cursor: "pointer", fontSize: "1rem", transition: "transform 0.2s",
-            }}>
+            <button onClick={copyToClipboard} style={{ background: copied ? "#10b981" : "linear-gradient(90deg, #00d4ff, #7c3aed)", border: "none", padding: "0.8rem 1.5rem", borderRadius: "10px", color: "#fff", fontWeight: "600", cursor: "pointer", fontSize: "1rem" }}>
               {copied ? "✓ Copied!" : "📋 Copy Prompt"}
             </button>
             
-            <button onClick={getNewPrompt} style={{
-              background: darkMode ? "rgba(255, 255, 255, 0.1)" : "#e5e7eb",
-              border: darkMode ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid #d1d5db",
-              padding: "0.8rem 1.5rem", borderRadius: "10px", color: darkMode ? "#fff" : "#1a1a3e", fontWeight: "600", cursor: "pointer", fontSize: "1rem",
-            }}>
+            <button onClick={getNewPrompt} style={{ background: darkMode ? "rgba(255, 255, 255, 0.1)" : "#e5e7eb", border: darkMode ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid #d1d5db", padding: "0.8rem 1.5rem", borderRadius: "10px", color: darkMode ? "#fff" : "#1a1a3e", fontWeight: "600", cursor: "pointer", fontSize: "1rem" }}>
               🎲 Random Prompt
             </button>
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div style={{
-          background: "rgba(124, 58, 237, 0.1)",
-          borderRadius: "16px",
-          padding: "2rem",
-          marginBottom: "2rem",
-          border: "1px solid rgba(124, 58, 237, 0.3)",
-          textAlign: "center"
-        }}>
+        <div style={{ background: "rgba(124, 58, 237, 0.1)", borderRadius: "16px", padding: "2rem", marginBottom: "2rem", border: "1px solid rgba(124, 58, 237, 0.3)", textAlign: "center" }}>
           <h3 style={{ color: "#fff", marginBottom: "0.5rem", fontSize: "1.3rem" }}>📧 Get AI tips weekly</h3>
           <p style={{ color: darkMode ? "#9ca3af" : "#6b7280", marginBottom: "1rem" }}>Join 10,000+ subscribers</p>
           <div style={{ display: "flex", gap: "0.5rem", maxWidth: "400px", margin: "0 auto" }}>
@@ -145,7 +118,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Navigation */}
         <nav style={{ display: "flex", justifyContent: "center", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
           <a href="/tools" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>Tools</a>
           <a href="/blog" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>Blog</a>
