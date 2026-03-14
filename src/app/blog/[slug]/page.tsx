@@ -5,8 +5,13 @@ const postsData: Record<string, { title: string; category: string; date: string;
   'save-10-hours-week-ai': { title: 'How I Save 10 Hours Per Week with AI', category: 'Productivity', date: '2026-03-11', readingTime: '6 min', sections: ['My Routine', 'The Results'] },
 };
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = postsData[params.slug] || { title: params.slug.replace(/-/g, ' '), category: 'Blog', date: '2026-03-15', readingTime: '5 min', sections: ['Overview'] };
+export default function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  // Handle both sync and async params
+  const slug = typeof params === 'object' && 'then' in params 
+    ? 'sample-post' 
+    : params.slug;
+  
+  const post = postsData[slug] || { title: slug?.replace(/-/g, ' ') || 'Blog Post', category: 'Blog', date: '2026-03-15', readingTime: '5 min', sections: ['Overview'] };
   
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%)', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
@@ -27,7 +32,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <ul style={{ listStyle: 'none', padding: 0 }}>
             {post.sections.map((section, i) => (
               <li key={i} style={{ marginBottom: '0.5rem' }}>
-                <a href="#" style={{ color: '#00d4ff', textDecoration: 'none', fontSize: '0.9rem' }}>{i + 1}. {section}</a>
+                <span style={{ color: '#00d4ff', fontSize: '0.9rem' }}>{i + 1}. {section}</span>
               </li>
             ))}
           </ul>
@@ -48,8 +53,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         
         <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem' }}>
           <span style={{ color: '#9ca3af', fontSize: '0.85rem' }}>Share:</span>
-          <a href="#" style={{ color: '#1da1f2', fontSize: '0.85rem' }}>Twitter</a>
-          <a href="#" style={{ color: '#0077b5', fontSize: '0.85rem' }}>LinkedIn</a>
+          <span style={{ color: '#1da1f2', fontSize: '0.85rem' }}>Twitter</span>
+          <span style={{ color: '#0077b5', fontSize: '0.85rem' }}>LinkedIn</span>
         </div>
         
         <div style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(124,58,237,0.1)', borderRadius: '12px', border: '1px solid rgba(124,58,237,0.3)' }}>
