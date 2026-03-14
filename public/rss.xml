@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Everyday AI Workflows</title>
+  <link>https://everydayaiworkflows.com</link>
+  <description>Daily AI prompts and tools to boost your productivity</description>
+  <language>en-us</language>
+  <item>
+    <title>10 ChatGPT Prompts for Sales Professionals That Close Deals</title>
+    <link>https://everydayaiworkflows.com/blog/10-chatgpt-prompts-sales</link>
+    <description>Boost your sales game with these 10 powerful ChatGPT prompts.</description>
+    <pubDate>Sat, 15 Mar 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>How I Save 10 Hours Per Week with AI</title>
+    <link>https://everydayaiworkflows.com/blog/save-10-hours-week-ai</link>
+    <description>Real strategies to reclaim 10 hours every week using AI.</description>
+    <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>ChatGPT vs Claude: Which Should You Use in 2026?</title>
+    <link>https://everydayaiworkflows.com/blog/chatgpt-vs-claude-2026</link>
+    <description>An in-depth comparison to help you choose.</description>
+    <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>

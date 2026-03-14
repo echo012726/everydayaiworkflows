@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useState } from "react";
 
 const prompts = [
   "Analyze this data and identify the top 3 trends. Explain each trend in one sentence.",
@@ -23,64 +23,34 @@ const prompts = [
   "Create a step-by-step guide to setting up a home office.",
   "Explain the difference between AI, ML, and deep learning.",
   "Write a compelling bio for your personal website.",
-  "Generate a list of 20 passive income ideas.",
-  "Create a pitch deck outline for a SaaS startup.",
-  "Write a follow-up email after a sales call.",
-  "Explain how to calculate ROI in simple terms.",
-  "Generate 5 content ideas for a B2B marketing blog.",
-  "Write a compelling headline for this blog post: [insert topic].",
-  "Create a customer persona for a fitness app.",
-  "Explain the lean startup methodology in 5 bullet points.",
-  "Write a cold DM to a potential podcast guest.",
-  "Generate a list of 15 books every entrepreneur should read.",
-  "Create a weekly newsletter template for a SaaS company.",
-  "Write a case study about a successful marketing campaign.",
-  "Explain how blockchain works in simple language.",
-  "Generate 10 ways to improve employee engagement.",
-  "Write a mission statement for a sustainable fashion brand.",
-  "Create a competitive analysis matrix for 3 competitors.",
-  "Explain the basics of SEO in 5 bullet points.",
-  "Write a script for a 60-second product video.",
-  "Generate 25 startup ideas for the gig economy.",
-  "Create a customer journey map for an e-commerce store.",
-  "Write a white paper outline about AI in healthcare.",
-  "Explain the differences between SQL and NoSQL databases.",
-  "Generate a list of 30 conversation starters for networking.",
-  "Write a press release for a new product launch.",
-  "Create a pricing strategy for a subscription service.",
-  "Explain the concept of product-market fit.",
-  "Write 10 customer objection responses for a sales team.",
-  "Generate a list of 50 productivity hacks.",
-  "Create a project timeline for launching a mobile app.",
-  "Write a comprehensive guide to personal finance for millennials.",
-  "Explain the lean canvas in detail.",
-  "Generate content ideas for a newsletter in the productivity niche.",
-  "Write a script for a customer onboarding call.",
-  "Create a list of 25 common marketing mistakes to avoid.",
-  "Explain the AIDA model with examples.",
-  "Write 15 email subject lines that boost open rates.",
-  "Generate a 90-day sales plan template.",
-  "Create a brand voice guide for a tech startup.",
-  "Write a comprehensive competitor analysis report structure.",
 ];
 
-function getDailyPrompt(): { index: number; prompt: string } {
+function getDailyPrompt() {
   const today = new Date();
   const start = new Date(2026, 0, 1);
   const diff = Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
-  const index = diff % prompts.length;
-  return { index, prompt: prompts[index] };
+  return { index: diff % prompts.length, prompt: prompts[diff % prompts.length] };
 }
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [promptIndex, setPromptIndex] = useState(0);
+  const [darkMode, setDarkMode] = useState(true);
+  const [readingProgress, setReadingProgress] = useState(0);
 
   useEffect(() => {
     const { index, prompt: p } = getDailyPrompt();
     setPrompt(p);
     setPromptIndex(index);
+    
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setReadingProgress((scrollTop / docHeight) * 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const copyToClipboard = async () => {
@@ -97,128 +67,94 @@ export default function Home() {
   };
 
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: "linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%)",
-      color: "#fff",
-      fontFamily: "system-ui, -apple-system, sans-serif",
-      padding: "2rem",
-    }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+    <div style={{ minHeight: '100vh', background: darkMode ? 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%)' : '#f8f9fa', color: darkMode ? '#fff' : '#1a1a3e', fontFamily: 'system-ui, -apple-system, sans-serif', transition: 'background 0.3s, color 0.3s' }}>
+      {/* Reading Progress Bar */}
+      <div style={{ position: 'fixed', top: 0, left: 0, height: '3px', background: 'linear-gradient(90deg, #00d4ff, #7c3aed)', width: readingProgress + '%', zIndex: 1000, transition: 'width 0.1s' }} />
+      
+      {/* Dark Mode Toggle */}
+      <button onClick={() => setDarkMode(!darkMode)} style={{ position: 'fixed', top: '1rem', right: '1rem', padding: '0.5rem 1rem', background: darkMode ? 'rgba(255,255,255,0.1)' : '#e5e7eb', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1.2rem', zIndex: 100 }}>
+        {darkMode ? '☀️' : '🌙'}
+      </button>
+
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
         {/* Header */}
         <header style={{ textAlign: "center", marginBottom: "3rem", paddingTop: "2rem" }}>
-          <h1 style={{ 
-            fontSize: "2.5rem", 
-            fontWeight: "700",
-            background: "linear-gradient(90deg, #00d4ff, #7c3aed)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            marginBottom: "0.5rem"
-          }}>
+          <h1 style={{ fontSize: "2.5rem", fontWeight: "700", background: "linear-gradient(90deg, #00d4ff, #7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", marginBottom: "0.5rem" }}>
             Everyday AI Workflows
           </h1>
-          <p style={{ color: "#9ca3af", fontSize: "1.1rem" }}>
+          <p style={{ color: darkMode ? "#9ca3af" : "#6b7280", fontSize: "1.1rem" }}>
             Daily AI prompts to boost your productivity
           </p>
         </header>
 
         {/* Prompt Card */}
         <div style={{
-          background: "rgba(255, 255, 255, 0.05)",
+          background: darkMode ? "rgba(255, 255, 255, 0.05)" : "#fff",
           borderRadius: "20px",
           padding: "2.5rem",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
+          border: darkMode ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid #e5e7eb",
           backdropFilter: "blur(10px)",
-          marginBottom: "2rem"
+          marginBottom: "2rem",
+          boxShadow: darkMode ? "none" : "0 4px 6px rgba(0,0,0,0.1)"
         }}>
-          <div style={{ 
-            display: "flex", 
-            justifyContent: "space-between", 
-            alignItems: "center",
-            marginBottom: "1.5rem"
-          }}>
-            <span style={{ 
-              background: "linear-gradient(90deg, #00d4ff, #7c3aed)",
-              padding: "0.4rem 1rem",
-              borderRadius: "20px",
-              fontSize: "0.85rem",
-              fontWeight: "600"
-            }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
+            <span style={{ background: "linear-gradient(90deg, #00d4ff, #7c3aed)", padding: "0.4rem 1rem", borderRadius: "20px", fontSize: "0.85rem", fontWeight: "600", color: "#fff" }}>
               Prompt of the Day
             </span>
-            <span style={{ color: "#6b7280", fontSize: "0.9rem" }}>
-              #{promptIndex + 1} of {prompts.length}
+            <span style={{ color: darkMode ? "#6b7280" : "#9ca3af", fontSize: "0.9rem" }}>
+              #{promptIndex + 1} of {prompts.length} • {Math.floor(prompts[promptIndex].split(' ').length / 200) + 1} min read
             </span>
           </div>
 
-          <p style={{ 
-            fontSize: "1.4rem", 
-            lineHeight: "1.6",
-            marginBottom: "2rem",
-            minHeight: "100px",
-            display: "flex",
-            alignItems: "center"
-          }}>
+          <p style={{ fontSize: "1.4rem", lineHeight: "1.6", marginBottom: "2rem", minHeight: "100px", display: "flex", alignItems: "center" }}>
             {prompt}
           </p>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <button
-              onClick={copyToClipboard}
-              style={{
-                background: copied ? "#10b981" : "linear-gradient(90deg, #00d4ff, #7c3aed)",
-                border: "none",
-                padding: "0.8rem 1.5rem",
-                borderRadius: "10px",
-                color: "#fff",
-                fontWeight: "600",
-                cursor: "pointer",
-                fontSize: "1rem",
-                transition: "transform 0.2s",
-              }}
-            >
+            <button onClick={copyToClipboard} style={{
+              background: copied ? "#10b981" : "linear-gradient(90deg, #00d4ff, #7c3aed)",
+              border: "none", padding: "0.8rem 1.5rem", borderRadius: "10px", color: "#fff", fontWeight: "600", cursor: "pointer", fontSize: "1rem", transition: "transform 0.2s",
+            }}>
               {copied ? "✓ Copied!" : "📋 Copy Prompt"}
             </button>
             
-            <button
-              onClick={getNewPrompt}
-              style={{
-                background: "rgba(255, 255, 255, 0.1)",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
-                padding: "0.8rem 1.5rem",
-                borderRadius: "10px",
-                color: "#fff",
-                fontWeight: "600",
-                cursor: "pointer",
-                fontSize: "1rem",
-              }}
-            >
+            <button onClick={getNewPrompt} style={{
+              background: darkMode ? "rgba(255, 255, 255, 0.1)" : "#e5e7eb",
+              border: darkMode ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid #d1d5db",
+              padding: "0.8rem 1.5rem", borderRadius: "10px", color: darkMode ? "#fff" : "#1a1a3e", fontWeight: "600", cursor: "pointer", fontSize: "1rem",
+            }}>
               🎲 Random Prompt
             </button>
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav style={{ 
-          display: "flex", 
-          justifyContent: "center", 
-          gap: "2rem",
-          marginTop: "3rem"
+        {/* Newsletter Signup */}
+        <div style={{
+          background: "rgba(124, 58, 237, 0.1)",
+          borderRadius: "16px",
+          padding: "2rem",
+          marginBottom: "2rem",
+          border: "1px solid rgba(124, 58, 237, 0.3)",
+          textAlign: "center"
         }}>
-          <a href="/tools" style={{ color: "#9ca3af", textDecoration: "none" }}>Tools</a>
-          <a href="/blog" style={{ color: "#9ca3af", textDecoration: "none" }}>Blog</a>
-          <a href="/about" style={{ color: "#9ca3af", textDecoration: "none" }}>About</a>
-          <a href="/contact" style={{ color: "#9ca3af", textDecoration: "none" }}>Contact</a>
-          <a href="/privacy" style={{ color: "#9ca3af", textDecoration: "none" }}>Privacy</a>
+          <h3 style={{ color: "#fff", marginBottom: "0.5rem", fontSize: "1.3rem" }}>📧 Get AI tips weekly</h3>
+          <p style={{ color: darkMode ? "#9ca3af" : "#6b7280", marginBottom: "1rem" }}>Join 10,000+ subscribers</p>
+          <div style={{ display: "flex", gap: "0.5rem", maxWidth: "400px", margin: "0 auto" }}>
+            <input type="email" placeholder="Your email" style={{ flex: 1, padding: "0.75rem", borderRadius: "8px", border: "1px solid #374151", background: darkMode ? "#1a1a3e" : "#fff", color: darkMode ? "#fff" : "#1a1a3e" }} />
+            <button style={{ padding: "0.75rem 1.5rem", background: "#7c3aed", border: "none", borderRadius: "8px", color: "#fff", fontWeight: "600", cursor: "pointer" }}>Subscribe</button>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <nav style={{ display: "flex", justifyContent: "center", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
+          <a href="/tools" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>Tools</a>
+          <a href="/blog" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>Blog</a>
+          <a href="/about" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>About</a>
+          <a href="/contact" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>Contact</a>
+          <a href="/privacy" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>Privacy</a>
         </nav>
 
-        {/* Footer */}
-        <footer style={{ 
-          textAlign: "center", 
-          marginTop: "4rem", 
-          color: "#4b5563",
-          fontSize: "0.9rem"
-        }}>
+        <footer style={{ textAlign: "center", marginTop: "4rem", color: darkMode ? "#4b5563" : "#9ca3af", fontSize: "0.9rem" }}>
           <p>Built to help you integrate AI into your daily workflow</p>
         </footer>
       </div>
