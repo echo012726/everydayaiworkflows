@@ -7,6 +7,8 @@ const allPosts = [
   { slug: '10-chatgpt-prompts-sales', title: '10 ChatGPT Prompts for Sales Professionals', excerpt: 'Boost your sales game with these prompts.', date: '2026-03-15', category: 'AI Prompts', readingTime: '5 min' },
   { slug: 'save-10-hours-week-ai', title: 'How I Save 10 Hours Per Week with AI', excerpt: 'Real strategies to reclaim 10 hours.', date: '2026-03-11', category: 'Productivity', readingTime: '6 min' },
   { slug: 'chatgpt-vs-claude-2026', title: 'ChatGPT vs Claude: Which Should You Use?', excerpt: 'An in-depth comparison.', date: '2026-03-12', category: 'AI Tools', readingTime: '8 min' },
+  { slug: 'add-quiz-component', title: 'Add Quiz Component', excerpt: 'Interactive quiz features.', date: '2026-03-14', category: 'Features', readingTime: '3 min' },
+  { slug: 'boost-productivity-with-ai', title: 'Boost Productivity with AI', excerpt: 'AI tips for productivity.', date: '2026-03-14', category: 'Productivity', readingTime: '5 min' },
 ];
 
 const categories = ['All', 'AI Prompts', 'AI Tools', 'Productivity', 'Tutorials'];
