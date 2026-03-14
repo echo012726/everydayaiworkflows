@@ -1,54 +1,35 @@
-use client
+"use client";
 
-import { Metadata } from 'next';
-
-type Props = { params: Promise<{ slug: string }> };
-
-export async function generateStaticParams() {
-  const slugs = ['10-chatgpt-prompts-sales', 'save-10-hours-week-ai', 'chatgpt-vs-claude-2026', 'best-free-ai-tools-2026', 'ai-morning-routine', 'automate-email-ai', 'build-first-ai-workflow', '10-chatgpt-prompts-productivity', 'ai-tools-small-business', 'meeting-time-half'];
-  return slugs.map((slug) => ({ slug }));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const titles: Record<string, string> = {
-    '10-chatgpt-prompts-sales': '10 ChatGPT Prompts for Sales Professionals',
-    'save-10-hours-week-ai': 'How I Save 10 Hours Per Week with AI',
-    'chatgpt-vs-claude-2026': 'ChatGPT vs Claude: Which Should You Use?',
-    'best-free-ai-tools-2026': 'Best Free AI Tools in 2026',
-  };
-  return { title: titles[slug] || slug };
-}
+type Props = { params: { slug: string } };
 
 const postsData: Record<string, { title: string; content: string; category: string; date: string; readingTime: string; sections: string[] }> = {
   '10-chatgpt-prompts-sales': { 
     title: '10 ChatGPT Prompts for Sales Professionals', 
     category: 'AI Prompts', date: '2026-03-15', readingTime: '5 min read',
-    sections: ['Introduction', 'Prompt 1-3', 'Prompt 4-6', 'Prompt 7-10', 'Conclusion'],
+    sections: ['Introduction', 'Prompts 1-3', 'Prompts 4-6', 'Prompts 7-10', 'Conclusion'],
     content: 'Sales professionals are always looking for ways to close more deals and build stronger relationships with prospects. ChatGPT can be your secret weapon when you know the right prompts.' 
   },
   'save-10-hours-week-ai': { 
     title: 'How I Save 10 Hours Per Week with AI', 
     category: 'Productivity', date: '2026-03-11', readingTime: '6 min read',
-    sections: ['My Morning Routine', 'Email Automation', 'Meeting Preparation', 'Content Creation', 'The Results'],
+    sections: ['My Routine', 'Email Automation', 'Meeting Prep', 'Content', 'Results'],
     content: 'I used to work 50+ hours a week. Now I work about 40 hours—and get more done.' 
   },
 };
 
-export default async function BlogPost({ params }: Props) {
-  const { slug } = await params;
+export default function BlogPost({ params }: Props) {
+  const slug = params.slug;
   const post = postsData[slug] || { title: slug.replace(/-/g, ' '), category: 'Blog', date: '2026-03-15', readingTime: '5 min read', sections: ['Overview', 'Details'], content: 'Content coming soon...' };
   
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%)', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop: '2rem' }}>
-        {/* Breadcrumb */}
         <div style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '1rem' }}>
           <a href="/" style={{ color: '#00d4ff', textDecoration: 'none' }}>Home</a> 
           <span style={{ margin: '0 0.5rem' }}>›</span>
           <a href="/blog" style={{ color: '#00d4ff', textDecoration: 'none' }}>Blog</a>
           <span style={{ margin: '0 0.5rem' }}>›</span>
-          <span style={{ color: '#9ca3af' }}>{post.title.substring(0, 30)}...</span>
+          <span style={{ color: '#9ca3af' }}>{post.title.substring(0, 25)}...</span>
         </div>
         
         <a href="/blog" style={{ color: '#00d4ff', textDecoration: 'none', fontSize: '0.9rem' }}>← Back to Blog</a>
@@ -62,7 +43,6 @@ export default async function BlogPost({ params }: Props) {
         
         <div style={{ color: '#9ca3af', marginBottom: '2rem', fontSize: '0.9rem' }}>{post.date}</div>
         
-        {/* Table of Contents */}
         <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
           <h3 style={{ fontSize: '1rem', color: '#fff', marginBottom: '1rem' }}>📋 Table of Contents</h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -76,7 +56,6 @@ export default async function BlogPost({ params }: Props) {
           </ul>
         </div>
         
-        {/* Print Button */}
         <button onClick={() => window.print()} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', padding: '0.5rem 1rem', borderRadius: '8px', color: '#fff', cursor: 'pointer', marginBottom: '1rem', fontSize: '0.85rem' }}>
           🖨️ Print / Save as PDF
         </button>
@@ -85,19 +64,17 @@ export default async function BlogPost({ params }: Props) {
           {post.sections.map((section, i) => (
             <div key={i} id={section.toLowerCase().replace(/\s+/g, '-')} style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid #374151' }}>
               <h2 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '1rem' }}>{section}</h2>
-              <p style={{ marginBottom: '1rem' }}>{section === 'Introduction' || section === 'Overview' ? post.content : `Content for ${section}...`}</p>
+              <p style={{ marginBottom: '1rem' }}>{section === 'Introduction' || section === 'Overview' || section === 'My Routine' ? post.content : `Content for ${section}...`}</p>
             </div>
           ))}
         </div>
         
-        {/* Social Share */}
         <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem', marginBottom: '2rem' }}>
           <span style={{ color: '#9ca3af', fontSize: '0.85rem' }}>Share:</span>
           <a href={'https://twitter.com/intent/tweet?text=' + encodeURIComponent(post.title)} target="_blank" rel="noopener" style={{ color: '#1da1f2', fontSize: '0.85rem' }}>Twitter</a>
           <a href={'https://www.linkedin.com/shareArticle?mini=true&url=https://everydayaiworkflows.com/blog/' + slug} target="_blank" rel="noopener" style={{ color: '#0077b5', fontSize: '0.85rem' }}>LinkedIn</a>
         </div>
         
-        {/* Newsletter */}
         <div style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(124,58,237,0.1)', borderRadius: '12px', border: '1px solid rgba(124,58,237,0.3)' }}>
           <h3 style={{ color: '#fff', marginBottom: '0.5rem' }}>📧 Get AI tips weekly</h3>
           <p style={{ color: '#9ca3af', marginBottom: '1rem', fontSize: '0.9rem' }}>Join 10,000+ subscribers.</p>
@@ -107,7 +84,6 @@ export default async function BlogPost({ params }: Props) {
           </div>
         </div>
         
-        {/* Author */}
         <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'linear-gradient(135deg, #00d4ff, #7c3aed)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🧠</div>
           <div>
@@ -116,7 +92,6 @@ export default async function BlogPost({ params }: Props) {
           </div>
         </div>
         
-        {/* Related */}
         <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #374151' }}>
           <h3 style={{ color: '#fff', marginBottom: '1rem' }}>Continue Reading</h3>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
