@@ -1,30 +1,47 @@
+export const metadata = {
+  title: 'About - Everyday AI Workflows',
+  description: 'Learn about Everyday AI Workflows - our mission to help people integrate AI into their daily lives.',
+};
+
 export default function About() {
   return (
     <div style={{
-      color: "#fff",
-      fontFamily: "system-ui, -apple-system, sans-serif",
-      padding: "2rem",
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%)',
+      color: '#fff',
+      fontFamily: 'system-ui, -apple-system, sans-serif',
+      padding: '2rem',
     }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto", background: "rgba(255, 255, 255, 0.05)", borderRadius: "20px", padding: "3rem", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
-        <h1 style={{ fontSize: "2.5rem", fontWeight: "700", marginBottom: "1.5rem", background: "linear-gradient(90deg, #00d4ff, #7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          About Everyday AI Workflows
-        </h1>
-        <div style={{ fontSize: "1.2rem", lineHeight: "1.8", color: "#d1d5db", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-          <p>
-            Welcome to Everyday AI Workflows. This platform was built with a simple mission: to help individuals and teams unlock the practical, day-to-day power of Artificial Intelligence.
+      <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop: '2rem' }}>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#00d4ff' }}>About Everyday AI Workflows</h1>
+        
+        <div style={{ lineHeight: '1.8', color: '#d1d5db', fontSize: '1.1rem' }}>
+          <p style={{ marginBottom: '1.5rem' }}>
+            Welcome to Everyday AI Workflows! Our mission is to help people integrate AI into their daily lives 
+            to boost productivity and simplify tasks.
           </p>
-          <p>
-            While the internet is full of complex tutorials and abstract theories about AI, we focus on what you can actually use right now. Whether you're a marketer, developer, student, or entrepreneur, our goal is to provide you with actionable prompts, tools, and strategies to save time and boost creativity.
+          
+          <p style={{ marginBottom: '1.5rem' }}>
+            We believe that AI shouldn't be just for tech experts - it should be accessible to everyone. 
+            That's why we provide daily AI prompts, curated tool lists, and tutorials to help you get started.
           </p>
-          <h2 style={{ color: "#fff", fontSize: "1.5rem", marginTop: "1rem" }}>What we offer:</h2>
-          <ul style={{ paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-            <li><strong>Daily Prompts:</strong> A fresh, high-quality prompt every day to spark new ideas and streamline tasks.</li>
-            <li><strong>Tool Directory:</strong> A curated list of the best AI tools, categorized for easy discovery.</li>
-            <li><strong>Workflow Guides:</strong> Step-by-step guides on how to combine tools and prompts for maximum efficiency.</li>
+          
+          <p style={{ marginBottom: '1.5rem' }}>
+            Whether you're a business owner, student, or just someone looking to be more productive, 
+            we have resources to help you leverage AI effectively.
+          </p>
+          
+          <h2 style={{ fontSize: '1.5rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>What We Offer</h2>
+          <ul style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
+            <li style={{ marginBottom: '0.5rem' }}>Daily AI prompts for various use cases</li>
+            <li style={{ marginBottom: '0.5rem' }}>Curated directory of the best AI tools</li>
+            <li style={{ marginBottom: '0.5rem' }}>Tutorials and guides on using AI effectively</li>
+            <li style={{ marginBottom: '0.5rem' }}>Tips and tricks for productivity</li>
           </ul>
-          <p>
-            AI is moving fast. We're here to help you keep up, not by overwhelming you with information, but by giving you the practical building blocks to construct your own automated workflows.
-          </p>
+        </div>
+        
+        <div style={{ marginTop: '3rem', paddingTop: '1rem', borderTop: '1px solid #374151' }}>
+          <a href="/" style={{ color: '#00d4ff', textDecoration: 'none' }}>← Back to Home</a>
         </div>
       </div>
     </div>

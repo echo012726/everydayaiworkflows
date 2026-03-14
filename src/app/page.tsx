@@ -98,6 +98,8 @@ export default function Home() {
 
   return (
     <div style={{
+      minHeight: "100vh",
+      background: "linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%)",
       color: "#fff",
       fontFamily: "system-ui, -apple-system, sans-serif",
       padding: "2rem",
@@ -195,6 +197,30 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+        {/* Navigation */}
+        <nav style={{ 
+          display: "flex", 
+          justifyContent: "center", 
+          gap: "2rem",
+          marginTop: "3rem"
+        }}>
+          <a href="/tools" style={{ color: "#9ca3af", textDecoration: "none" }}>Tools</a>
+          <a href="/blog" style={{ color: "#9ca3af", textDecoration: "none" }}>Blog</a>
+          <a href="/about" style={{ color: "#9ca3af", textDecoration: "none" }}>About</a>
+          <a href="/contact" style={{ color: "#9ca3af", textDecoration: "none" }}>Contact</a>
+          <a href="/privacy" style={{ color: "#9ca3af", textDecoration: "none" }}>Privacy</a>
+        </nav>
+
+        {/* Footer */}
+        <footer style={{ 
+          textAlign: "center", 
+          marginTop: "4rem", 
+          color: "#4b5563",
+          fontSize: "0.9rem"
+        }}>
+          <p>Built to help you integrate AI into your daily workflow</p>
+        </footer>
       </div>
     </div>
   );
