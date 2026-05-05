@@ -4,9 +4,7 @@
 // 1. Sign up free at beehiiv.com
 // 2. Go to Settings → Publication → Embed Subscribe Form
 // 3. Copy the iframe src URL and replace "BEEHIIV_EMBED_URL" below
-const BEEHIIV_EMBED_URL = "BEEHIIV_EMBED_URL";
-
-const IS_CONFIGURED = BEEHIIV_EMBED_URL !== "BEEHIIV_EMBED_URL";
+const BEEHIIV_EMBED_URL = "https://monthly-newsletter-258d49.beehiiv.com/subscribe";
 
 export default function NewsletterCapture({ darkMode }: { darkMode?: boolean }) {
   const bg = darkMode ? "rgba(255,255,255,0.05)" : "#f0f4ff";
@@ -38,24 +36,11 @@ export default function NewsletterCapture({ darkMode }: { darkMode?: boolean }) 
         ))}
       </div>
 
-      {IS_CONFIGURED ? (
-        <iframe
-          src={BEEHIIV_EMBED_URL}
-          style={{ width: "100%", maxWidth: "480px", height: "120px", border: "none", borderRadius: "8px" }}
-          title="Newsletter signup"
-        />
-      ) : (
-        <div style={{
-          background: darkMode ? "rgba(124,58,237,0.15)" : "#ede9fe",
-          border: "2px dashed #7c3aed",
-          borderRadius: "10px",
-          padding: "16px",
-          color: darkMode ? "#c4b5fd" : "#5b21b6",
-          fontSize: "0.85rem",
-        }}>
-          <strong>Newsletter coming soon</strong> — subscribe form launching shortly!
-        </div>
-      )}
+      <iframe
+        src={BEEHIIV_EMBED_URL}
+        style={{ width: "100%", maxWidth: "480px", height: "320px", border: "none", borderRadius: "8px" }}
+        title="Newsletter signup"
+      />
     </div>
   );
 }
