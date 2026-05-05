@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import NewsletterCapture from "./components/NewsletterCapture";
 
 const prompts = [
   "Analyze this data and identify the top 3 trends. Explain each trend in one sentence.",
@@ -109,14 +110,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ background: "rgba(124, 58, 237, 0.1)", borderRadius: "16px", padding: "2rem", marginBottom: "2rem", border: "1px solid rgba(124, 58, 237, 0.3)", textAlign: "center" }}>
-          <h3 style={{ color: "#fff", marginBottom: "0.5rem", fontSize: "1.3rem" }}>📧 Get AI tips weekly</h3>
-          <p style={{ color: darkMode ? "#9ca3af" : "#6b7280", marginBottom: "1rem" }}>Join 10,000+ subscribers</p>
-          <div style={{ display: "flex", gap: "0.5rem", maxWidth: "400px", margin: "0 auto" }}>
-            <input type="email" placeholder="Your email" style={{ flex: 1, padding: "0.75rem", borderRadius: "8px", border: "1px solid #374151", background: darkMode ? "#1a1a3e" : "#fff", color: darkMode ? "#fff" : "#1a1a3e" }} />
-            <button style={{ padding: "0.75rem 1.5rem", background: "#7c3aed", border: "none", borderRadius: "8px", color: "#fff", fontWeight: "600", cursor: "pointer" }}>Subscribe</button>
-          </div>
-        </div>
+        <NewsletterCapture darkMode={darkMode} />
 
         <nav style={{ display: "flex", justifyContent: "center", gap: "2rem", marginTop: "3rem", flexWrap: "wrap" }}>
           <a href="/tools" style={{ color: darkMode ? "#9ca3af" : "#6b7280", textDecoration: "none" }}>Tools</a>
