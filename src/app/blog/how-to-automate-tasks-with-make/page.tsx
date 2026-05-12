@@ -56,7 +56,7 @@ export default function BlogPost() {
 
           <h2 style={{ fontSize: "1.5rem", color: "#fff", marginTop: "2rem", marginBottom: "1rem", borderBottom: "1px solid #374151", paddingBottom: "0.5rem" }}>Workflow 3: Weekly Report Generator</h2>
           <p>This is one of the highest-value scenarios for managers and business owners: a scenario that runs every Monday morning, pulls data from your key sources (Google Analytics, Airtable, a Google Sheet), and generates a formatted weekly report that gets emailed to you or your team automatically.</p>
-          <pre style={{ background: "rgba(0,0,0,0.4)", border: "1px solid #374151", borderRadius: "8px", padding: "1.25rem", overflowX: "0.9rem", color: "#a5f3fc", marginBottom: "1rem" }}>{`[Schedule: Every Monday at 8am]
+          <pre style={{ background: "rgba(0,0,0,0.4)", border: "1px solid #374151", borderRadius: "8px", padding: "1.25rem", overflowX: "auto", fontSize: "0.9rem", color: "#a5f3fc", marginBottom: "1rem" }}>{`[Schedule: Every Monday at 8am]
   → [Google Sheets: Get Range] — last week's metrics
   → [Airtable: Search Records] — tasks completed this week  
   → [HTTP: Claude API]
