@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    'impact-site-verification': '54bff760-4faf-4474-9a6a-c8cffef4a135',
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="impact-site-verification" content="54bff760-4faf-4474-9a6a-c8cffef4a135" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6175161566333696"
