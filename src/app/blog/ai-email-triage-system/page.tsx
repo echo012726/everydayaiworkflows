@@ -55,7 +55,7 @@ Original email:
           <h2 style={{ fontSize: "1.5rem", color: "#fff", marginTop: "2rem", marginBottom: "1rem", borderBottom: "1px solid #374151", paddingBottom: "0.5rem" }}>Step 3: Automate the Sorting with Rules + AI</h2>
           <p>The real leverage comes from automating the triage decision before you even open your inbox. The approach: combine Gmail filters (or Outlook rules) with an AI-powered automation layer.</p>
           <p>
-            <a href="https://make.com" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> is ideal for this — you can build a scenario that watches your inbox, sends new emails through an AI module to classify them, then auto-labels or moves them based on the result. A basic flow looks like this:
+            <a href="https://www.make.com/en/register?pc=msarmento42/en/register?pc=msarmento42" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> is ideal for this — you can build a scenario that watches your inbox, sends new emails through an AI module to classify them, then auto-labels or moves them based on the result. A basic flow looks like this:
           </p>
           <ul style={{ paddingLeft: "1.5rem", marginBottom: "1rem" }}>
             <li style={{ marginBottom: "0.5rem" }}>Trigger: new email arrives in Gmail</li>
@@ -86,7 +86,7 @@ genuinely useful vs. just noise.
 
           <div style={{ background: "rgba(0, 212, 255, 0.05)", border: "1px solid rgba(0, 212, 255, 0.2)", borderRadius: "12px", padding: "1.25rem", marginTop: "2rem", marginBottom: "2rem" }}>
             <p style={{ margin: 0, color: "#a5f3fc" }}>
-              💡 <strong>Want to fully automate the trigger step?</strong> This workflow pairs perfectly with <a href="https://make.com" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> — connect your Gmail, an AI module, and Slack in one no-code scenario. <a href="/tools" style={{ color: "#00d4ff" }}>See all recommended tools →</a>
+              💡 <strong>Want to fully automate the trigger step?</strong> This workflow pairs perfectly with <a href="https://www.make.com/en/register?pc=msarmento42/en/register?pc=msarmento42" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> — connect your Gmail, an AI module, and Slack in one no-code scenario. <a href="/tools" style={{ color: "#00d4ff" }}>See all recommended tools →</a>
             </p>
           </div>
 

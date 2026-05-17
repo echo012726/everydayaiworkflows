@@ -37,7 +37,7 @@ Keep total length under 400 words.`}</pre>
           <p>Practical use: set up a Brand Voice for each client at onboarding. From then on, first drafts come out on-brand with minimal editing.</p>
 
           <h2 style={{ fontSize: "1.5rem", color: "#fff", marginTop: "2rem", marginBottom: "1rem", borderBottom: "1px solid #374151", paddingBottom: "0.5rem" }}>3. Make.com — Automating the Operational Glue</h2>
-          <p>The biggest time drain for most freelancers isn't the actual work — it's the operational overhead around it: sending intake forms, following up on unpaid invoices, posting deliverables to client folders, updating project statuses. <a href="https://make.com" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> automates these recurring triggers without writing a single line of code.</p>
+          <p>The biggest time drain for most freelancers isn't the actual work — it's the operational overhead around it: sending intake forms, following up on unpaid invoices, posting deliverables to client folders, updating project statuses. <a href="https://www.make.com/en/register?pc=msarmento42/en/register?pc=msarmento42" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> automates these recurring triggers without writing a single line of code.</p>
           <p>Three high-ROI scenarios for freelancers:</p>
           <ul style={{ paddingLeft: "1.5rem", marginBottom: "1rem" }}>
             <li style={{ marginBottom: "0.5rem" }}><strong style={{ color: "#fff" }}>New client onboarding:</strong> Form submission → create Google Drive folder → send welcome email → create project in your PM tool → log to CRM row. All automatic.</li>

@@ -15,8 +15,8 @@ const affiliateTools = [
     features: ["1,500+ integrations", "Visual workflow builder", "Free tier (1,000 ops/month)", "AI modules built-in"],
     cta: "Start Free on Make.com",
     // TODO: Replace with your Make.com referral link after signing up at make.com/en/affiliate-program
-    // Format: https://www.make.com/en/register?pc=YOUR_REF_CODE
-    url: "https://make.com",
+    // Format: https://www.make.com/en/register?pc=msarmento42/en/register?pc=YOUR_REF_CODE
+    url: "https://www.make.com/en/register?pc=msarmento42/en/register?pc=msarmento42",
     highlight: true,
     commission: "20% recurring",
   },

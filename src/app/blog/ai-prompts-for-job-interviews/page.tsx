@@ -141,7 +141,7 @@ they push back or say the offer is firm.`}</pre>
 
           <div style={{ background: "rgba(0, 212, 255, 0.05)", border: "1px solid rgba(0, 212, 255, 0.2)", borderRadius: "12px", padding: "1.25rem", marginTop: "2rem", marginBottom: "2rem" }}>
             <p style={{ margin: 0, color: "#a5f3fc" }}>
-              💡 <strong>Want to automate your job search workflow?</strong> Pair these prompts with <a href="https://make.com" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> to track applications, auto-generate follow-up reminders, and log interview notes — all without manual spreadsheets. <a href="/tools" style={{ color: "#00d4ff" }}>See all recommended tools →</a>
+              💡 <strong>Want to automate your job search workflow?</strong> Pair these prompts with <a href="https://www.make.com/en/register?pc=msarmento42/en/register?pc=msarmento42" rel="noopener sponsored" style={{ color: "#00d4ff" }}>Make.com</a> to track applications, auto-generate follow-up reminders, and log interview notes — all without manual spreadsheets. <a href="/tools" style={{ color: "#00d4ff" }}>See all recommended tools →</a>
             </p>
           </div>
 
