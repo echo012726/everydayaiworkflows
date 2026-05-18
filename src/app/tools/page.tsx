@@ -14,8 +14,6 @@ const affiliateTools = [
     useCase: "Use it to: auto-summarize emails with AI → post to Slack, scrape leads → enrich with AI → push to CRM, or trigger Claude/GPT tasks on a schedule.",
     features: ["1,500+ integrations", "Visual workflow builder", "Free tier (1,000 ops/month)", "AI modules built-in"],
     cta: "Start Free on Make.com",
-    // TODO: Replace with your Make.com referral link after signing up at make.com/en/affiliate-program
-    // Format: https://www.make.com/en/register?pc=msarmento42/en/register?pc=YOUR_REF_CODE
     url: "https://www.make.com/en/register?pc=msarmento42/en/register?pc=msarmento42",
     highlight: true,
     commission: "20% recurring",
@@ -28,7 +26,6 @@ const affiliateTools = [
     useCase: "Use it to: write SEO blog posts 5× faster, generate ad variations for A/B tests, or draft email sequences with consistent voice.",
     features: ["Brand Voice training", "SEO integration (Surfer)", "50+ templates", "Team collaboration"],
     cta: "Try Jasper Free",
-    // TODO: Replace with your Jasper affiliate link after approval at jasper.ai/affiliates
     url: "https://jasper.ai",
     highlight: false,
     commission: "25% recurring",
@@ -41,8 +38,6 @@ const affiliateTools = [
     useCase: "Use it to: write up-to-date product comparisons, generate news-informed social content, or research-backed blog posts without manual searching.",
     features: ["Real-time web access", "Article writer (long-form)", "Paraphrasing tool", "Free tier available"],
     cta: "Try Writesonic Free",
-    // TODO: Replace with your Writesonic affiliate link after signing up at writesonic.com/affiliates
-    // Format: https://writesonic.com/?via=YOUR_ID
     url: "https://writesonic.com",
     highlight: false,
     commission: "30% recurring",
@@ -55,10 +50,33 @@ const affiliateTools = [
     useCase: "Use it to: auto-generate meeting summaries from transcripts, create SOPs from bullet notes, or build AI-powered knowledge bases your team can query.",
     features: ["In-context AI (reads your docs)", "AI database properties", "Q&A over your workspace", "Free referral credit"],
     cta: "Get Notion",
-    // TODO: Replace with your Notion referral link (notion.so has a referral program in Account Settings)
     url: "https://notion.so",
     highlight: false,
     commission: "$10 credit/referral",
+  },
+  {
+    name: "NordVPN",
+    category: "Security",
+    tagline: "Best VPN for remote workers and public Wi-Fi security",
+    description: "NordVPN is the go-to VPN for remote workers who need fast, reliable protection on public Wi-Fi. With 6,000+ servers across 60+ countries, it keeps your browsing private whether you're at a coffee shop, airport, or co-working space.",
+    useCase: "Use it to: secure your connection on public networks, access region-locked tools and content, and protect sensitive client data while working remotely.",
+    features: ["6,000+ servers in 60+ countries", "No-logs policy", "Threat Protection built-in", "Up to 10 devices"],
+    cta: "Get NordVPN",
+    url: "https://www.jdoqocy.com/click-101754888-13914989",
+    highlight: false,
+    commission: "Affiliate",
+  },
+  {
+    name: "Surfer SEO",
+    category: "SEO",
+    tagline: "AI-powered SEO content optimization and keyword research",
+    description: "Surfer SEO analyzes top-ranking pages and gives you a real-time content score as you write. It tells you exactly how many words, headings, keywords, and images you need to outrank the competition — no guesswork.",
+    useCase: "Use it to: optimize blog posts for search before publishing, find keyword gaps in existing content, or build topical authority with AI-assisted content plans.",
+    features: ["Real-time content scoring", "Keyword research & clustering", "AI outline generator", "SERP analyzer"],
+    cta: "Try Surfer SEO",
+    url: "https://surferseo.com",
+    highlight: false,
+    commission: "Affiliate",
   },
 ];
 
@@ -91,8 +109,12 @@ export default function ToolsPage() {
         <h1 style={{ fontSize: "2.2rem", fontWeight: 700, margin: "1rem 0 0.5rem", lineHeight: 1.2 }}>
           AI Tools We Actually Use
         </h1>
-        <p style={{ color: "#9ca3af", marginBottom: "1.5rem", maxWidth: "600px" }}>
+        <p style={{ color: "#9ca3af", marginBottom: "1rem", maxWidth: "600px" }}>
           Every workflow on this site was built with these tools. The ones below are worth paying for — the free alternatives are listed at the bottom.
+        </p>
+
+        <p style={{ color: "#6b7280", fontSize: "0.82rem", marginBottom: "1.5rem", fontStyle: "italic" }}>
+          Some links on this page are affiliate links. We may earn a small commission at no extra cost to you — it helps keep this site free.
         </p>
 
         <div style={{
