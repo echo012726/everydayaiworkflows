@@ -32,19 +32,19 @@ export default function BlogPost() {
 Format: Description | Hours | Rate | Total
 
 Time entries:
-{{time_entries}}
+[time_entries]
 
-Client rate: ${{hourly_rate}}/hr
+Client rate: [hourly_rate]/hr
 Write clear, professional descriptions a client would understand. 
 Group similar tasks. No internal jargon.`}</pre>
           <p>Claude returns clean, professional line items. Make.com then creates the invoice in your invoicing software automatically. No manual formatting, no copy-paste errors.</p>
 
           <h2 style={{ fontSize: "1.5rem", color: "#fff", marginTop: "2rem", marginBottom: "1rem", borderBottom: "1px solid #374151", paddingBottom: "0.5rem" }}>Automating the Delivery Email</h2>
           <p>A generic "Please find your invoice attached" email is forgettable. A personalized one builds the relationship and gets paid faster. Use this Make.com + Claude combo to write each delivery email dynamically:</p>
-          <pre style={{ background: "rgba(255,255,255,0.05)", border: "1px solid #374151", borderRadius: "8px", padding: "1rem", overflowX: "auto", fontSize: "0.9rem", color: "#a5f3fc" }}>{`Write a short, professional invoice delivery email for {{client_name}}.
-Invoice total: ${{invoice_total}}
-Due date: {{due_date}}
-Projects completed this period: {{project_summary}}
+          <pre style={{ background: "rgba(255,255,255,0.05)", border: "1px solid #374151", borderRadius: "8px", padding: "1rem", overflowX: "auto", fontSize: "0.9rem", color: "#a5f3fc" }}>{`Write a short, professional invoice delivery email for [client_name].
+Invoice total: [invoice_total]
+Due date: [due_date]
+Projects completed this period: [project_summary]
 
 Keep it warm but professional. 3-4 sentences max. 
 Mention one specific thing accomplished this billing period.
@@ -53,7 +53,7 @@ End with a clear call to action for payment.`}</pre>
 
           <h2 style={{ fontSize: "1.5rem", color: "#fff", marginTop: "2rem", marginBottom: "1rem", borderBottom: "1px solid #374151", paddingBottom: "0.5rem" }}>Automated Payment Follow-Up Sequences</h2>
           <p>This is where most people leave money on the table. Set up three automated reminders using Make.com's scheduler:</p>
-          <p><strong>Reminder 1 (3 days before due):</strong> A friendly heads-up. Tone: helpful, not anxious. Sample prompt: <em>"Write a 2-sentence friendly payment reminder for {'{{client_name}}'}. Invoice #{'{{invoice_number}}'} for ${'{{amount}}'} is due in 3 days. Keep it light and professional."</em></p>
+          <p><strong>Reminder 1 (3 days before due):</strong> A friendly heads-up. Tone: helpful, not anxious. Sample prompt: <em>"Write a 2-sentence friendly payment reminder for {'[client_name]'}. Invoice #{'[invoice_number]'} for ${'[amount]'} is due in 3 days. Keep it light and professional."</em></p>
           <p><strong>Reminder 2 (1 day after due):</strong> A polite nudge. Mention that you can take a quick call if there's an issue. Tone: understanding but clear.</p>
           <p><strong>Reminder 3 (7 days after due):</strong> Direct and firm. Include the invoice as an attachment again. Ask for a specific payment date. This one should be slightly more formal.</p>
           <p>Make.com can check invoice status via API before sending each reminder, so if a client pays after Reminder 1, they never receive Reminder 2. No awkward emails to already-paid clients.</p>
@@ -64,7 +64,7 @@ End with a clear call to action for payment.`}</pre>
           <pre style={{ background: "rgba(255,255,255,0.05)", border: "1px solid #374151", borderRadius: "8px", padding: "1rem", overflowX: "auto", fontSize: "0.9rem", color: "#a5f3fc" }}>{`Extract expense data from this receipt email.
 Return JSON: { vendor, date, amount, currency, category, notes }
 Categories: software, travel, meals, office, marketing, other
-Email content: {{email_body}}`}</pre>
+Email content: [email_body]`}</pre>
           <p>Make.com takes that JSON and logs the expense row directly into a Google Sheet or your accounting software. Your expense reports write themselves.</p>
 
           <h2 style={{ fontSize: "1.5rem", color: "#fff", marginTop: "2rem", marginBottom: "1rem", borderBottom: "1px solid #374151", paddingBottom: "0.5rem" }}>Building the Full System: Implementation Checklist</h2>
