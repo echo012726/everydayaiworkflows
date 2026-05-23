@@ -43,16 +43,17 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body>{children}
-      <footer style={{borderTop:'1px solid #e5e7eb', padding:'32px 16px', textAlign:'center', fontSize:'0.85rem', color:'#6b7280'}}>
-        <nav style={{display:'flex', justifyContent:'center', gap:'24px', flexWrap:'wrap', marginBottom:'12px'}}>
-          <a href="/about" style={{color:'#6b7280', textDecoration:'none'}}>About</a>
-          <a href="/blog" style={{color:'#6b7280', textDecoration:'none'}}>Blog</a>
-          <a href="/tools" style={{color:'#6b7280', textDecoration:'none'}}>Tools</a>
-          <a href="/contact" style={{color:'#6b7280', textDecoration:'none'}}>Contact</a>
-          <a href="/privacy" style={{color:'#6b7280', textDecoration:'none'}}>Privacy Policy</a>
+      <body>{children}      <footer style={{borderTop:"1px solid #e5e7eb",padding:"32px 16px",textAlign:"center",fontSize:"0.85rem",color:"#6b7280"}}>
+        <nav style={{display:"flex",justifyContent:"center",gap:"24px",flexWrap:"wrap",marginBottom:"12px"}}>
+          <a href="/about" style={{color:"#6b7280",textDecoration:"none"}}>About</a>
+          <a href="/blog" style={{color:"#6b7280",textDecoration:"none"}}>Blog</a>
+          <a href="/tools" style={{color:"#6b7280",textDecoration:"none"}}>Tools</a>
+          <a href="/contact" style={{color:"#6b7280",textDecoration:"none"}}>Contact</a>
+          <a href="/privacy" style={{color:"#6b7280",textDecoration:"none"}}>Privacy Policy</a>
         </nav>
-        <p style={{margin:0}}>&copy; {new Date().getFullYear()} Everyday AI Workflows. All rights reserved.</p>
+        <p style={{margin:0}}>© 2026 Everyday AI Workflows. All rights reserved.</p>
       </footer>
       </body>
     </html>
+  );
+}
