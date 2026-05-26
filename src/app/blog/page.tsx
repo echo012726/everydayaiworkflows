@@ -42,6 +42,8 @@ const allPosts = [
 
   { slug: 'ai-tools-for-designers', title: 'AI Tools for Designers: Automate the Tedious Parts and Focus on Creative Work', excerpt: 'How designers can use AI to generate UX microcopy, turn vague briefs into precise specs, write handoff docs, and prep presentation narratives — without changing how they actually design.', date: '2026-05-24', category: 'AI Tools', readingTime: '8 min' },
   { slug: 'chatgpt-for-coding-beginners', title: 'ChatGPT for Coding Beginners: Learn Faster, Debug Smarter, and Actually Ship Things', excerpt: 'How beginners can use ChatGPT as a personalized tutor, debug errors with step-by-step explanations, build real projects from day one, and understand code they did not write.', date: '2026-05-24', category: 'Tutorials', readingTime: '9 min' },
+  { slug: 'ai-for-real-estate-listings', title: 'How Real Estate Agents Are Using AI to Write Listings That Actually Sell', excerpt: 'A practical guide to using AI for listing descriptions, social captions, client emails, and objection scripts — with copy-paste prompts for every step.', date: '2026-05-26', category: 'AI Tools', readingTime: '7 min' },
+  { slug: 'using-claude-for-research', title: 'Using Claude for Research: A Practical Workflow That Actually Saves Hours', excerpt: 'A 5-phase research workflow using Claude to map topics, process sources faster, stress-test conclusions, and convert notes into polished deliverables in half the usual time.', date: '2026-05-26', category: 'Productivity', readingTime: '8 min' },
 ];
 
 const categories = ['All', 'AI Prompts', 'AI Tools', 'Productivity', 'Automation', 'Tutorials'];
