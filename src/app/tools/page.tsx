@@ -14,9 +14,7 @@ const affiliateTools = [
     useCase: "Use it to: auto-summarize emails with AI → post to Slack, scrape leads → enrich with AI → push to CRM, or trigger Claude/GPT tasks on a schedule.",
     features: ["1,500+ integrations", "Visual workflow builder", "Free tier (1,000 ops/month)", "AI modules built-in"],
     cta: "Start Free on Make.com",
-    // TODO: Replace with your Make.com referral link after signing up at make.com/en/affiliate-program
-    // Format: https://www.make.com/en/register?pc=msarmento42/en/register?pc=YOUR_REF_CODE
-    url: "https://www.make.com/en/register?pc=msarmento42/en/register?pc=msarmento42",
+    url: "https://www.make.com/en/register?pc=msarmento42",
     highlight: true,
     commission: "20% recurring",
   },
@@ -28,7 +26,6 @@ const affiliateTools = [
     useCase: "Use it to: write SEO blog posts 5× faster, generate ad variations for A/B tests, or draft email sequences with consistent voice.",
     features: ["Brand Voice training", "SEO integration (Surfer)", "50+ templates", "Team collaboration"],
     cta: "Try Jasper Free",
-    // TODO: Replace with your Jasper affiliate link after approval at jasper.ai/affiliates
     url: "https://jasper.ai",
     highlight: false,
     commission: "25% recurring",
@@ -41,11 +38,21 @@ const affiliateTools = [
     useCase: "Use it to: write up-to-date product comparisons, generate news-informed social content, or research-backed blog posts without manual searching.",
     features: ["Real-time web access", "Article writer (long-form)", "Paraphrasing tool", "Free tier available"],
     cta: "Try Writesonic Free",
-    // TODO: Replace with your Writesonic affiliate link after signing up at writesonic.com/affiliates
-    // Format: https://writesonic.com/?via=YOUR_ID
     url: "https://writesonic.com",
     highlight: false,
     commission: "30% recurring",
+  },
+  {
+    name: "NordVPN",
+    category: "Security",
+    tagline: "Best VPN for remote workers and AI power users",
+    description: "If you're working remotely, using public Wi-Fi, or accessing AI tools on the go, NordVPN keeps your connection encrypted and your data private. 6,000+ servers across 60+ countries, a verified no-logs policy, and the fast NordLynx protocol.",
+    useCase: "Use it to: secure your connection when using AI APIs on public networks, protect sensitive prompts and outputs from interception, or access geo-restricted AI tools.",
+    features: ["6,000+ servers, 60+ countries", "Verified no-logs policy", "NordLynx (WireGuard) protocol", "Threat protection built-in"],
+    cta: "Try NordVPN",
+    url: "https://www.awin1.com/cread.php?awinmid=15132&awinaffid=2892161",
+    highlight: false,
+    commission: "Awin affiliate",
   },
   {
     name: "Notion AI",
@@ -55,7 +62,6 @@ const affiliateTools = [
     useCase: "Use it to: auto-generate meeting summaries from transcripts, create SOPs from bullet notes, or build AI-powered knowledge bases your team can query.",
     features: ["In-context AI (reads your docs)", "AI database properties", "Q&A over your workspace", "Free referral credit"],
     cta: "Get Notion",
-    // TODO: Replace with your Notion referral link (notion.so has a referral program in Account Settings)
     url: "https://notion.so",
     highlight: false,
     commission: "$10 credit/referral",
