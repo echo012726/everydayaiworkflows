@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Privacy Policy - Everyday AI Workflows',
-  description: 'Privacy Policy for Everyday AI Workflows - We respect your privacy and do not collect personal information.',
+  description: 'Privacy Policy for Everyday AI Workflows',
 };
 
 export default function Privacy() {
@@ -14,23 +14,37 @@ export default function Privacy() {
     }}>
       <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop: '2rem' }}>
         <h1 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#00d4ff' }}>Privacy Policy</h1>
-        
+
         <div style={{ lineHeight: '1.8', color: '#d1d5db' }}>
-          <p style={{ marginBottom: '1rem' }}>Last updated: March 2026</p>
-          
+          <p style={{ marginBottom: '1rem' }}>Last updated: May 2026</p>
+
           <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Information We Collect</h2>
-          <p style={{ marginBottom: '1rem' }}>We do not collect any personal information from our users. Our website is completely free to use without registration or login.</p>
-          
-          <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Cookies</h2>
-          <p style={{ marginBottom: '1rem' }}>We do not use cookies to track your activity.</p>
-          
+          <p style={{ marginBottom: '1rem' }}>We do not collect personally identifiable information such as your name or email address unless you voluntarily subscribe to our newsletter. Our website is free to use without registration.</p>
+
+          <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Cookies &amp; Tracking</h2>
+          <p style={{ marginBottom: '1rem' }}>This website uses cookies and similar tracking technologies. These include:</p>
+          <ul style={{ marginBottom: '1rem', paddingLeft: '1.5rem' }}>
+            <li style={{ marginBottom: '0.5rem' }}><strong>Google AdSense</strong> — displays ads and may use cookies to show ads relevant to your interests based on prior visits to this and other websites.</li>
+            <li style={{ marginBottom: '0.5rem' }}><strong>Analytics</strong> — we collect anonymised usage data (page views, referrers, general location) to understand how visitors use the site. No personally identifiable information is collected.</li>
+            <li style={{ marginBottom: '0.5rem' }}><strong>Newsletter (Beehiiv)</strong> — if you subscribe, Beehiiv stores your email address and uses cookies to track email engagement.</li>
+          </ul>
+          <p style={{ marginBottom: '1rem' }}>You can opt out of personalised advertising at any time via <a href=https://www.google.com/settings/ads style={{ color: '#00d4ff' }}>Google's Ads Settings</a>. You can also disable cookies in your browser settings, though this may affect site functionality.</p>
+
           <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Third-Party Services</h2>
-          <p style={{ marginBottom: '1rem' }}>We use Google AdSense to display advertisements. Google may use cookies to serve ads based on your visits to this and other websites.</p>
-          
-          <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Contact Us</h2>
-          <p style={{ marginBottom: '1rem' }}>If you have any questions about this Privacy Policy, please contact us at: everydayaiworkflows@gmail.com</p>
+          <p style={{ marginBottom: '1rem' }}>We use the following third-party services, each governed by their own privacy policies:</p>
+          <ul style={{ marginBottom: '1rem', paddingLeft: '1.5rem' }}>
+            <li style={{ marginBottom: '0.5rem' }}>Google AdSense — advertising</li>
+            <li style={{ marginBottom: '0.5rem' }}>Beehiiv — newsletter delivery</li>
+            <li style={{ marginBottom: '0.5rem' }}>Vercel — hosting and analytics</li>
+          </ul>
+
+          <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Your Rights</h2>
+          <p style={{ marginBottom: '1rem' }}>You may request deletion of any personal data we hold (e.g. newsletter subscription) at any time by contacting us below.</p>
+
+          <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Contact</h2>
+          <p style={{ marginBottom: '1rem' }}>Questions about this Privacy Policy? Email us at: everydayaiworkflows@gmail.com</p>
         </div>
-        
+
         <div style={{ marginTop: '3rem', paddingTop: '1rem', borderTop: '1px solid #374151' }}>
           <a href="/" style={{ color: '#00d4ff', textDecoration: 'none' }}>← Back to Home</a>
         </div>
