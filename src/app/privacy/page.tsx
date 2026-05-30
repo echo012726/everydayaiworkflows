@@ -28,7 +28,7 @@ export default function Privacy() {
             <li style={{ marginBottom: '0.5rem' }}><strong>Analytics</strong> — we collect anonymised usage data (page views, referrers, general location) to understand how visitors use the site. No personally identifiable information is collected.</li>
             <li style={{ marginBottom: '0.5rem' }}><strong>Newsletter (Beehiiv)</strong> — if you subscribe, Beehiiv stores your email address and uses cookies to track email engagement.</li>
           </ul>
-          <p style={{ marginBottom: '1rem' }}>You can opt out of personalised advertising at any time via <a href=https://www.google.com/settings/ads style={{ color: '#00d4ff' }}>Google's Ads Settings</a>. You can also disable cookies in your browser settings, though this may affect site functionality.</p>
+          <p style={{ marginBottom: '1rem' }}>You can opt out of personalised advertising at any time via <a href="https://www.google.com/settings/ads" style={{ color: '#00d4ff' }}>Google's Ads Settings</a>. You can also disable cookies in your browser settings, though this may affect site functionality.</p>
 
           <h2 style={{ fontSize: '1.3rem', color: '#fff', marginTop: '2rem', marginBottom: '1rem' }}>Third-Party Services</h2>
           <p style={{ marginBottom: '1rem' }}>We use the following third-party services, each governed by their own privacy policies:</p>
